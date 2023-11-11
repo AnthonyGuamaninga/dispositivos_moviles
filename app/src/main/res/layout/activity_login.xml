@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="531dp"
-        android:layout_height="389dp"
+        android:layout_width="692dp"
+        android:layout_height="575dp"
         app:srcCompat="@drawable/fondo"
-        tools:layout_editor_absoluteX="-60dp"
+        tools:layout_editor_absoluteX="-218dp"
         tools:layout_editor_absoluteY="-57dp" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteX="3dp"
 
-        tools:layout_editor_absoluteY="-111dp">
+        tools:layout_editor_absoluteY="107dp">
 
         <TextView
             android:id="@+id/textView5"
@@ -54,9 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:textColor="@color/material_dynamic_neutral10"
             android:inputType="text"
-            android:text="username" />
+            android:text="username"
+            android:textColor="@color/white"
+            android:background="#bc4ed8"/>
 
         <TextView
             android:id="@+id/textView6"
@@ -73,30 +74,34 @@
             android:id="@+id/editTextTextPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/material_dynamic_neutral10"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:background="#bc4ed8"
+            android:textColor="@color/material_dynamic_neutral10" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
+            android:layout_marginTop="50dp"
+
             tools:layout_editor_absoluteX="173dp"
             tools:layout_editor_absoluteY="332dp"
-                        />
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Forget password?"
+            android:textColor="#bc4ed8"
+            android:layout_marginTop="20dp"
             tools:layout_editor_absoluteX="172dp"
-            tools:layout_editor_absoluteY="396dp" />
+            tools:layout_editor_absoluteY="396dp"
+            android:layout_gravity="center"/>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-
 
     <TextView
         android:id="@+id/textView9"
