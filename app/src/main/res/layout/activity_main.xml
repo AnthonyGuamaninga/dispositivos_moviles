@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity"
+    android:background="@drawable/background_main"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/txt_title_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mi primera app"
+        android:textSize="50dp"
+        style="@style/theme_title"
+        android:textColor="@color/black"/>
+
+    <ImageView
+        android:id="@+id/img_main"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:srcCompat="@drawable/proyect_yasuo" />
+
+    <TextView
+        android:id="@+id/txt_mi_apellido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guamaninga"
+        style="@style/theme_normal_center2"/>
+
+    <TextView
+        android:id="@+id/txt_mis_nombres"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Anthony Alfredo"
+        style="@style/theme_normal_center2"/>
+
+    <TextView
+        android:id="@+id/txt_mi_genero"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Masculino"
+        style="@style/theme_normal_center2"/>
+
+    <Button
+        android:id="@+id/btn_regresar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Regresar"
+        style="@style/theme_buttom"/>
+
+</LinearLayout>

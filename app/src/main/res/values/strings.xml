@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">My Application Login</string>
+    <string name="txt_start_session">Inicio de sesión</string>
+    <string name="txt_insert_user">Usuario</string>
+    <string name="txt_insert_password">Contraseña</string>
+    <string name="btn_login">Acceder</string>
+    <string name="link_register">Crear una cuenta</string>
+    <string name="txt_access">Ingresar con:</string>
+    
+</resources>
