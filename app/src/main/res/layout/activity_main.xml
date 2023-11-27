@@ -12,7 +12,7 @@
         android:id="@+id/txt_title_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mi primera app"
+        android:text="@string/txt_welcome"
         android:textSize="50dp"
         style="@style/theme_title"
         android:textColor="@color/black"/>
@@ -42,6 +42,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Masculino"
+        style="@style/theme_normal_center2"/>
+
+    <TextView
+        android:id="@+id/txt_ip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Direccion IP"
         style="@style/theme_normal_center2"/>
 
     <Button

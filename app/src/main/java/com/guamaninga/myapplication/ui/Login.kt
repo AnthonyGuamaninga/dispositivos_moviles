@@ -38,7 +38,7 @@ class Login : AppCompatActivity() {
                     Snackbar.LENGTH_LONG).show()
             }else{
                 val intentExp = Intent(this, MainActivity::class.java)
-                intentExp.putExtra(Constants.TEXT_VARIABLE, "Mi primer trabajo")
+                intentExp.putExtra(Constants.TEXT_VARIABLE, user)
                 startActivity(intentExp)
             }
         }
