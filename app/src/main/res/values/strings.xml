@@ -3,9 +3,14 @@
     <string name="txt_start_session">Inicio de sesión</string>
     <string name="txt_insert_user">Usuario</string>
     <string name="txt_insert_password">Contraseña</string>
-    <string name="btn_login">Acceder</string>
     <string name="link_register">Crear una cuenta</string>
     <string name="txt_access">Ingresar con:</string>
     <string name="txt_welcome">Bienvenido %s</string>
+    <string name="txt_name">Alfred</string>
+    <string name="txt_lastName">Guamaninga</string>
+    <string name="txt_genre">Masculino</string>
+
+    <string name="bnt_return">Regresar</string>
+    <string name="btn_login">Acceder</string>
     
 </resources>

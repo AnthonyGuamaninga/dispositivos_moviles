@@ -29,16 +29,22 @@ class Login : AppCompatActivity() {
 
     fun startControl(){
         binding.btnAccess.setOnClickListener{
-            var user = binding.txtInputUser.text.toString()
+            var userName = binding.txtInputUser.text.toString()
             var pass = binding.txtInputPassword.text.toString()
 
-            if(!SigIn.checkUserAndPassword(user,pass)){
+
+
+            if(!SigIn.checkUserAndPassword(userName,pass)){
                 Snackbar.make(binding.btnAccess,
                     "Error! Usuario o contraseña icorrecta",
                     Snackbar.LENGTH_LONG).show()
             }else{
                 val intentExp = Intent(this, MainActivity::class.java)
-                intentExp.putExtra(Constants.TEXT_VARIABLE, user)
+                intentExp.putExtra(Constants.TEXT_VARIABLE, userName)
+                val user = SigIn().getUser(userName)
+                intentExp.putExtra(Constants.TEXT_NAME, user.firstName)
+                intentExp.putExtra(Constants.TEXT_LASTNAME, user.lastName)
+                intentExp.putExtra(Constants.TEXT_ID,  user.id)
                 startActivity(intentExp)
             }
         }

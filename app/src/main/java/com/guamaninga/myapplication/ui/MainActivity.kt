@@ -28,11 +28,13 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         startControl()
-        getAndShowName()
+        getAndShowUserInformation()
     }
-    fun getAndShowName(){
-        val intent = getIntent()
-        binding.txtTitleMain.text = getString(R.string.txt_welcome, intent.getStringExtra("user"))
+    fun getAndShowUserInformation(){
+        binding.txtTitleMain.text = getString(R.string.txt_welcome, intent.getStringExtra("user") )
+        binding.txtMisNombres.text = intent.getStringExtra("name")
+        binding.txtMiApellido.text = intent.getStringExtra("lastName")
+
     }
     fun startControl(){ //para el boton regresar
         binding.btnRegresar.setOnClickListener{

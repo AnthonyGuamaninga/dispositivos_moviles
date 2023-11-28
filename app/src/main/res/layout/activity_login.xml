@@ -24,6 +24,11 @@
             android:text="@string/txt_start_session"
             style="@style/theme_title" />
 
+        <ImageView
+            android:id="@+id/icon_start_session"
+            app:srcCompat="@drawable/logo_facebook"
+            style="@style/theme_login_icons"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

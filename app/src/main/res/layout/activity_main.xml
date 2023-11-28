@@ -27,21 +27,21 @@
         android:id="@+id/txt_mi_apellido"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Guamaninga"
+        tools:text="@string/txt_lastName"
         style="@style/theme_normal_center2"/>
 
     <TextView
         android:id="@+id/txt_mis_nombres"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Anthony Alfredo"
+        tools:text="@string/txt_name"
         style="@style/theme_normal_center2"/>
 
     <TextView
         android:id="@+id/txt_mi_genero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Masculino"
+        tools:text="@string/txt_genre"
         style="@style/theme_normal_center2"/>
 
     <TextView
@@ -55,7 +55,7 @@
         android:id="@+id/btn_regresar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Regresar"
+        android:text="@string/bnt_return"
         style="@style/theme_buttom"/>
 
 </LinearLayout>
