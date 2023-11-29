@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -51,4 +52,9 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // Ipify get public IP
     implementation("com.github.chintan369:Ipify-Android:1.0.1")
+    //Room
+    implementation ("androidx.room:room-runtime:2.5.0")
+    annotationProcessor ("androidx.room:room-compiler:2.5.0")
+    // To use kotlyn SYmbol Processing (KSP)
+    ksp ("androidx.room:room-compiler:2.5.0")
 }

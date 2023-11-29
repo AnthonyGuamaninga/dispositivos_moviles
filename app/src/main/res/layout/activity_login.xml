@@ -26,7 +26,7 @@
 
         <ImageView
             android:id="@+id/icon_start_session"
-            app:srcCompat="@drawable/logo_facebook"
+            app:srcCompat="@drawable/baseline_android_24"
             style="@style/theme_login_icons"/>
 
         <com.google.android.material.textfield.TextInputLayout
