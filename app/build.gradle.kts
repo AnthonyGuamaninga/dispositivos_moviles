@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.guamaninga.myapplication"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.guamaninga.myapplication"
@@ -56,5 +56,5 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.0")
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     // To use Kotlin
-    ksp("androidx.room.room-compiler:2.5.0")
+    //ksp("androidx.room.room-compiler:2.5.0")
 }

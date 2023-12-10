@@ -5,29 +5,39 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Users (
-    var userName: String?=null,
-    var password: String?=null
-){
+    val userName: String? = null,
+    val password: String? = null
+)
+{
     @PrimaryKey(autoGenerate = true)
-    var id: Int = -1
-    var firstName: String = "nombre sin registrar"
-    var lastName: String = "apellido sin registar"
-    var profile: String = "perfil vacio"
+    var userId = -1
+    var firstName : String = " "
+    var lastName : String = " "
+    var profile : String = " "
 
-    constructor(userName: String?, password: String?, id: Int,firstName:String, lastName:String)
-            :this("",""){
-                this.id=id
-                this.userName=userName
-                this.password=password
-                this.firstName=firstName
-                this.lastName=lastName
-            }
+    constructor(
+        username: String?,
+        password: String?, userId: Int
+    ) : this(username, password)
+    {
+        this.userId = userId
+    }
 
-    constructor(nombre: String,
-                apellido: String,
-                perfil: String): this("", "")
+    constructor(
+        id: Int, username: String?,
+        password: String?, profile: String
+    ) : this(username, password)
+    {
+        this.profile = profile
+    }
 
-    constructor():this("","")
+    constructor( userName:String?, password:String?,userId:Int, firstName:String, lastName:String)
+            :this(userName,password){
+        this.userId = userId
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+
 }
 
 // nombre,  apellido, perfil

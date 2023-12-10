@@ -8,20 +8,22 @@ import androidx.room.Update
 import com.guamaninga.myapplication.data.entities.Users
 
 @Dao
-interface UsersDao {
+interface UsersDAO {
 
     @Query("select * from Users")
-    fun getAllUsers(): List<Users>
+    fun getAllUsers() : List<Users>
 
-    @Query("select * from Users where id=:userId")
-    fun getOneUser(userId:Int): Users
+    @Query("select * from Users where userId = :userId")
+    fun getOneUser(userId :Int):Users
 
     @Insert
-    fun insert(users:List<Users>)
+    fun insertUser(user: List<Users>)
 
     @Update
-    fun update(users:List<Users>)
+    fun updateUsers(users: List<Users>)
 
+
+    //condicion delete
     @Delete
     fun delete(user: Users)
 }
