@@ -2,10 +2,14 @@ package com.guamaninga.myapplication.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.lifecycleScope
 import com.guamaninga.myapplication.R
 import com.guamaninga.myapplication.databinding.ActivityPrincipalBinding
 import com.guamaninga.myapplication.ui.fragments.FavoriteFragment
 import com.guamaninga.myapplication.ui.fragments.ListFragment
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class PrincipalActivity : AppCompatActivity() {
 
@@ -33,7 +37,17 @@ class PrincipalActivity : AppCompatActivity() {
                     transaction.commit()
                     true
                 }
-                else -> false
+                else -> {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        val name = withContext(Dispatchers.IO){
+                            val a = "Alfred"
+                            val b = a + "Guamaninga"
+                            b
+                        }
+                        binding.txtUsrName.text = name.toString()
+                    }
+                    false
+                }
             }
         }
 

@@ -8,7 +8,7 @@
     tools:context=".ui.activities.PrincipalActivity">
 
     <TextView
-        android:id="@+id/txtUsrId"
+        android:id="@+id/txtUsrName"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="center"
@@ -27,7 +27,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUsrId" />
+        app:layout_constraintTop_toBottomOf="@+id/txtUsrName" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
