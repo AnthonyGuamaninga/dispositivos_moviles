@@ -56,9 +56,11 @@ dependencies {
     implementation("androidx.room:room-runtime:2.5.0")
     annotationProcessor("androidx.room:room-compiler:2.5.0")
     // To use Kotlin Symbol Processing (KSP)
-    ksp("androidx.room.room-compiler:2.5.0")
+    ksp("androidx.room:room-compiler:2.5.0")
+
     //Corrutinas
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+    
 }

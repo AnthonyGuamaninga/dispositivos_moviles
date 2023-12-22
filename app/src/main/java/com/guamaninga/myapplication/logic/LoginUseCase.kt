@@ -18,22 +18,26 @@ class LoginUseCase(val connection: DBRepository) {
         return ret
     }
 
-    fun getUserName1(userId: Int):Users=
+    suspend fun getUserName1(userId: Int):Users=
         connection.getUsersDAO().getOneUser(userId)
 
 
-    fun getUserNAme(usrId:Int) : Users=
+    suspend fun getUserNAme(usrId:Int) : Users=
         UserRepository().getListUsers().first{
             it.userId == usrId
         }
 
-    fun insertUser()=
-        if(connection.getUsersDAO().getAllUsers().isNotEmpty()){
+    suspend fun insertUser()=
+        if(connection.getUsersDAO().getAllUsers().isEmpty()){
             connection.getUsersDAO().insertUser(
                 UserRepository().getListUsers()
             )
         }else{
-
+            null
         }
+
+    suspend fun getAllUsers() : List<Users> =
+        connection.getUsersDAO().getAllUsers()
+
 
 }

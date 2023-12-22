@@ -11,7 +11,9 @@ import kotlinx.coroutines.launch
 class My_Application: Application() {
     override fun onCreate() {
         super.onCreate()
+
         con = DBConnection().getConnection(applicationContext)
+
         GlobalScope.launch(Dispatchers.IO) {
             LoginUseCase(con).insertUser()
         }
