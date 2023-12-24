@@ -3,6 +3,7 @@ package com.guamaninga.myapplication.ui.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.guamaninga.myapplication.R
@@ -15,6 +16,7 @@ import com.guamaninga.myapplication.ui.core.My_Application
 import com.guamaninga.myapplication.ui.fragments.FavoriteFragment
 import com.guamaninga.myapplication.ui.fragments.ListFragment
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -34,7 +36,8 @@ class PrincipalActivity : AppCompatActivity() {
 
     }
     private fun initRecyclerView(){
-        lifecycleScope.launch{
+        lifecycleScope.launch(Dispatchers.Main){
+            binding.animationView.visibility = View.VISIBLE
             val usrs = withContext(Dispatchers.IO){ getUsersList() }
             val adapter: UsersAdapter = UsersAdapter(usrs)
             binding.rvUsers.adapter = adapter
@@ -44,11 +47,14 @@ class PrincipalActivity : AppCompatActivity() {
                     LinearLayoutManager.VERTICAL,
                     false
                 )
+            binding.animationView.visibility = View.GONE
         }
     }
 
-    suspend private fun getUsersList(): List<Users> =
-        LoginUseCase(My_Application.getConnectionDB()!!).getAllUsers()
+    suspend private fun getUsersList(): List<Users> {
+        delay(7000)
+        return LoginUseCase(My_Application.getConnectionDB()!!).getAllUsers()
+    }
 
 
     private fun checkDataBase(){
