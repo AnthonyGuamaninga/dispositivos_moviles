@@ -1,11 +1,11 @@
-package com.guamaninga.myapplication.data.dao
+package com.guamaninga.myapplication.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.guamaninga.myapplication.data.entities.Users
+import com.guamaninga.myapplication.data.local.entities.Users
 
 @Dao
 interface UsersDAO {
@@ -14,7 +14,7 @@ interface UsersDAO {
     fun getAllUsers() : List<Users>
 
     @Query("select * from Users where userId = :userId")
-    fun getOneUser(userId :Int):Users
+    fun getOneUser(userId :Int): Users
 
     @Insert
     fun insertUser(user: List<Users>)

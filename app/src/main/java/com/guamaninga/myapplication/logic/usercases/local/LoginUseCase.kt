@@ -1,8 +1,8 @@
-package com.guamaninga.myapplication.logic
+package com.guamaninga.myapplication.logic.usercases.local
 
-import com.guamaninga.myapplication.data.entities.Users
-import com.guamaninga.myapplication.data.repository.DBRepository
-import com.guamaninga.myapplication.data.repository.UserRepository
+import com.guamaninga.myapplication.data.local.entities.Users
+import com.guamaninga.myapplication.data.local.repository.DBRepository
+import com.guamaninga.myapplication.data.local.repository.UserRepository
 
 class LoginUseCase(val connection: DBRepository) {
 
@@ -18,11 +18,11 @@ class LoginUseCase(val connection: DBRepository) {
         return ret
     }
 
-    suspend fun getUserName1(userId: Int):Users=
+    suspend fun getUserName1(userId: Int): Users =
         connection.getUsersDAO().getOneUser(userId)
 
 
-    suspend fun getUserNAme(usrId:Int) : Users=
+    suspend fun getUserNAme(usrId:Int) : Users =
         UserRepository().getListUsers().first{
             it.userId == usrId
         }

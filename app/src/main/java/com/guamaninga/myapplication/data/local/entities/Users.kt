@@ -1,4 +1,4 @@
-package com.guamaninga.myapplication.data.entities
+package com.guamaninga.myapplication.data.local.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

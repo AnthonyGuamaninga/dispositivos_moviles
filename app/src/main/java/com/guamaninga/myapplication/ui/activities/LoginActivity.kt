@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import com.guamaninga.myapplication.ui.core.My_Application
 import com.guamaninga.myapplication.databinding.ActivityLoginBinding
-import com.guamaninga.myapplication.logic.LoginUseCase
+import com.guamaninga.myapplication.logic.usercases.local.LoginUseCase
 import com.guamaninga.myapplication.ui.core.Constants
 
 class LoginActivity : AppCompatActivity() {

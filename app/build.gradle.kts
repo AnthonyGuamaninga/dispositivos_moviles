@@ -66,4 +66,9 @@ dependencies {
     //Image load implementation
     implementation("io.coil-kt:coil:2.5.0")
     implementation("com.airbnb.android:lottie:6.2.0")
+
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
 }

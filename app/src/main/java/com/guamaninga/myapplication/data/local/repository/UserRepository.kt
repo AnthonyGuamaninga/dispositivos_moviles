@@ -1,6 +1,6 @@
-package com.guamaninga.myapplication.data.repository
+package com.guamaninga.myapplication.data.local.repository
 
-import com.guamaninga.myapplication.data.entities.Users
+import com.guamaninga.myapplication.data.local.entities.Users
 
 class UserRepository {
 

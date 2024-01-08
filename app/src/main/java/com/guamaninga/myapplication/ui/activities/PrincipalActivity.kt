@@ -2,16 +2,15 @@ package com.guamaninga.myapplication.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.guamaninga.myapplication.R
-import com.guamaninga.myapplication.data.entities.Users
+import com.guamaninga.myapplication.data.local.entities.Users
 import com.guamaninga.myapplication.databinding.ActivityPrincipalBinding
-import com.guamaninga.myapplication.logic.LoginUseCase
+import com.guamaninga.myapplication.logic.usercases.jikan.JikanAnimeUserCase
+import com.guamaninga.myapplication.logic.usercases.local.LoginUseCase
 import com.guamaninga.myapplication.ui.adapter.UsersAdapter
-import com.guamaninga.myapplication.ui.core.Constants
 import com.guamaninga.myapplication.ui.core.My_Application
 import com.guamaninga.myapplication.ui.fragments.FavoriteFragment
 import com.guamaninga.myapplication.ui.fragments.ListFragment
@@ -33,6 +32,8 @@ class PrincipalActivity : AppCompatActivity() {
         checkDataBase()
 
         initRecyclerView()
+
+        val a = JikanAnimeUserCase()
 
     }
     private fun initRecyclerView(){
