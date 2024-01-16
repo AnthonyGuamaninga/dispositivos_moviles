@@ -2,6 +2,7 @@ package com.guamaninga.myapplication.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,8 +10,11 @@ import com.guamaninga.myapplication.R
 import com.guamaninga.myapplication.data.local.entities.Users
 import com.guamaninga.myapplication.databinding.ActivityPrincipalBinding
 import com.guamaninga.myapplication.logic.usercases.jikan.JikanAnimeUserCase
+import com.guamaninga.myapplication.logic.usercases.jikan.JikanGetTopAnimesUserCase
 import com.guamaninga.myapplication.logic.usercases.local.LoginUseCase
+import com.guamaninga.myapplication.ui.adapter.TopAnimeAdapter
 import com.guamaninga.myapplication.ui.adapter.UsersAdapter
+import com.guamaninga.myapplication.ui.core.Constants
 import com.guamaninga.myapplication.ui.core.My_Application
 import com.guamaninga.myapplication.ui.fragments.FavoriteFragment
 import com.guamaninga.myapplication.ui.fragments.ListFragment
@@ -31,11 +35,44 @@ class PrincipalActivity : AppCompatActivity() {
         initListeners()
         checkDataBase()
 
-        initRecyclerView()
-
+        initRecyclerView1()
+        //initRecyclerViewTopAnimes()
         val a = JikanAnimeUserCase()
 
+        getAllTopAnimes()
+
     }
+
+    private fun getAllTopAnimes() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val x = JikanGetTopAnimesUserCase().getResponse()
+            Log.d(Constants.TEXT_ID, x.toString())
+        }
+    }
+
+    private fun initRecyclerView1(){
+        lifecycleScope.launch(Dispatchers.Main){
+            binding.animationView.visibility = View.VISIBLE
+            val jikan = JikanGetTopAnimesUserCase()
+            val anime = withContext(Dispatchers.IO){ jikan.getResponse() }
+            anime.onSuccess {animes ->
+                val adapter = TopAnimeAdapter(animes.data)
+                binding.rvUsers.adapter = adapter
+                binding.rvUsers.layoutManager =
+                    LinearLayoutManager(
+                        this@PrincipalActivity,
+                        LinearLayoutManager.VERTICAL,
+                        false
+                    )
+            }
+            anime.onFailure{
+
+            }
+            binding.animationView.visibility = View.GONE
+
+        }
+    }
+
     private fun initRecyclerView(){
         lifecycleScope.launch(Dispatchers.Main){
             binding.animationView.visibility = View.VISIBLE
@@ -51,6 +88,7 @@ class PrincipalActivity : AppCompatActivity() {
             binding.animationView.visibility = View.GONE
         }
     }
+
 
     suspend private fun getUsersList(): List<Users> {
         delay(7000)

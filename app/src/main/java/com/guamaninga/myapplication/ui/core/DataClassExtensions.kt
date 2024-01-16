@@ -1,6 +1,8 @@
 package com.guamaninga.myapplication.ui.core
 
 import com.guamaninga.myapplication.data.network.entities.jikan.anime.FullInfoAnime
+import com.guamaninga.myapplication.data.network.entities.jikan.top.TopAnime
+import com.guamaninga.myapplication.logic.entities.TopAnimeLG
 import com.guamaninga.myapplication.logic.usercases.jikan.entities.FullInfoAnimeLG
 
 fun FullInfoAnime.getFullInfoAnimeLG() = FullInfoAnimeLG(
@@ -9,4 +11,7 @@ fun FullInfoAnime.getFullInfoAnimeLG() = FullInfoAnimeLG(
     this.data.images.jpg.small_image_url,
     this.data.images.jpg.large_image_url,
     this.data.synopsis
+)
+
+fun TopAnime.getFullTopAnimeLG() = TopAnimeLG(
 )

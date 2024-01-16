@@ -8,7 +8,7 @@ object RetrofitBase {
     private const val JIKAN_URL = "https://api.jikan.moe/v4/"
 
     fun getRetrofitJikanConnection(): Retrofit{
-        return Retrofit.Builder().baseUrl(JIKAN_URL)
+        return Retrofit.Builder().baseUrl("https://api.jikan.moe/v4/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
